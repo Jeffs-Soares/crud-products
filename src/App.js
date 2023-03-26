@@ -4,6 +4,9 @@ import Header from "./components/Header/Header";
 import Home from './components/Pages/Home/Home';
 import About from './components/Pages/About/About';
 import Register from './components/Pages/Register/Register';
+import FormClient from './components/Pages/Register/FormClient/FormClient';
+import FormProduct from './components/Pages/Register/FormProduct/FormProduct';
+
 
 function App() {
   return (
@@ -14,12 +17,15 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home /> }/>
-          <Route path="/register" element={<Register /> }/>
           <Route path="/about" element={<About /> }/>
+          <Route path="/register" element={<Register />}>
+          <Route path='/register/client' element={<FormClient/>} />
+          <Route path='/register/product' element={<FormProduct/>} />
+          </Route>
         </Routes>
 
       </BrowserRouter>
-      <Footer />
+      {/* <Footer /> */}
 
     </>
   );

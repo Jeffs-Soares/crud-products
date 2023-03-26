@@ -1,8 +1,18 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
 const Register = () => {
+
+  const labels = ['Code', 'Description', 'Price', 'Name'];
+
   return (
-    <div>Register Page</div>
+    <div>
+    <ul>
+        <li> <Link to='/register/client'> Client </Link>  </li>
+        <li> <Link to='/register/product'> Product </Link>  </li>
+      </ul>
+    
+    </div>
+    
   )
 }
 
