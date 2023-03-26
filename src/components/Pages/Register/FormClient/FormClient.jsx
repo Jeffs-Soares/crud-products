@@ -11,6 +11,7 @@ const FormClient = ({labels}) => {
   const labelCode = labels[0]
   
   const placeholder = `Type the ${labels[2].toLowerCase()}`;
+  
 
 
 
