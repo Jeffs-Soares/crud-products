@@ -1,26 +1,29 @@
+import Button from "../Button/Button";
 import Input from "../Input/Input";
 
 
-const FormClient = ({labels}) => {
+const FormClient = ({labels, button}) => {
 
 
- 
- 
- 
-  const labelName = labels[2];
-  const labelCode = labels[0]
+/*   const labels = ['Code', 'Description', 'Price', 'Name']; */
+
+  const labelCode = labels[0];
+  const labelName = labels[3];
   
-  const placeholder = `Type the ${labels[2].toLowerCase()}`;
-  
-
 
 
   return (
     <div>
-        <h1> Form Client </h1>
-        <Input labelName={labelCode} placeholder={placeholder}/>
-        <Input labelName={labelName} placeholder={placeholder}/>
-        
+        <h1 className="text-center"> Form Client </h1>
+      <form>
+        <Input labelName={labelCode} placeholder={'Type the client code'}/>
+        <Input labelName={labelName} placeholder={'Type the client name'}/>
+        <button>{button}</button>
+      </form>
+
+
+
+
     </div>
   )
 }
