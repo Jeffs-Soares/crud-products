@@ -1,10 +1,13 @@
-@tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 
+@layer components {
 
-@layer components{
+    div>label {
+        @apply block text-gray-700 text-sm font-bold mb-2;
+    }
 
-   
+    div>input {
+        @apply shadow appearance-none border rounded-sm w-full py-1 pl-2;
+    }
 }

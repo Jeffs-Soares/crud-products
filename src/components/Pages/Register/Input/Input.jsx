@@ -9,8 +9,8 @@ const Input = ({labelName, placeholder, getInput}) => {
 
   return (
     <div>
-        <label htmlFor="name" className='block text-gray-700 text-sm font-bold mb-2'>{labelName}</label>
-        <input placeholder={`${placeholder}`} onChange={getValue}  className='shadow appearance-none border rounded-sm w-full py-1 pl-2'/>
+        <label htmlFor="name">{labelName}</label>
+        <input placeholder={`${placeholder}`} onChange={getValue}/>
 
     </div>
   )

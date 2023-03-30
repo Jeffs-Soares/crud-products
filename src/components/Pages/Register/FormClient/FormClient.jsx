@@ -40,11 +40,11 @@ const FormClient = ({labels, button}) => {
 
   return (
     <div>
-      <form className='flex flex-col gap-2 shadow-md bg-white p-12'>
-        <h1 className="text-center text-gray-700 font-bold text-lg"> Form Client </h1>
+      <form>
+        <h1> Form Client </h1>
         <Input labelName={labelCode} placeholder={'Type the client code'} getInput={getCodeValue} />
         <Input getInput={getClientNameValue} labelName={labelName} placeholder={'Type the client name'}/>
-        <button onClick={handleClick} className='bg-gray-200 w-max px-4 py-1 rounded text-gray-800 font-bold hover:bg-gray-800 hover:text-white transition-all delay-75 mt-2'>{button}</button>
+        <button onClick={handleClick}>{button}</button>
       </form>
 
     </div>
