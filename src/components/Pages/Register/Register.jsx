@@ -1,4 +1,4 @@
-import FormClient from "./FormClient/FormClient";
+import Form from "./Form/Form";
 
 const Register = () => {
 
@@ -6,12 +6,10 @@ const Register = () => {
 
   const button = 'Send';
 
-
-
   return (
     <div className="pt-12">
       <div className="flex gap-6 justify-center items-center pt-12">
-        <FormClient button={button} labels={labels} />
+        <Form button={button} labels={labels} />
       </div>
     </div>
 
