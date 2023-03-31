@@ -30,9 +30,7 @@ const Form = ({labels, button, tagsValues}) => {
       price: productPrice,
       tag: productTag
     }])
-
-   
-
+    
   }
 
   useEffect(() =>{
@@ -63,7 +61,7 @@ const Form = ({labels, button, tagsValues}) => {
       <form onSubmit={saveData}>
         <h1> Form Product </h1>
         
-        <Input labelName={labelName}  getInput={getProduct}   placeholder={'Type the product name'}/>
+        <Input labelName={labelName}  getInput={getProduct}  placeholder={'Type the product name'}/>
         <Input labelName={labelCode}  getInput={getCode} placeholder={'Type the code'}  />
         <Input labelName={labelPrice}  getInput={getPrice} placeholder={'Type the price'}  />
         <Select labelName={labelTag}  getInput={getTag} tagsList={tagsValues}/>
