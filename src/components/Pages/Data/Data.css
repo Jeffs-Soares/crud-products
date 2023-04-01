@@ -1,0 +1,26 @@
+@tailwind components;
+
+
+
+@layer components{
+
+    table{
+        @apply min-w-full text-left text-sm font-light;
+    }
+
+    table > thead{
+        @apply border-b font-medium dark:border-neutral-500;
+    }
+
+    th{
+        @apply px-6 py-4;
+    }
+
+    tbody > tr{
+        @apply border-b dark:border-neutral-500;
+    }
+
+    td{
+        @apply whitespace-nowrap px-6 py-4 font-medium capitalize;
+    }
+}

@@ -6,12 +6,20 @@ import About from './components/Pages/About/About';
 import Register from './components/Pages/Register/Register';
 import Data from "./components/Pages/Data/Data";
 
+import {useQuery} from 'react-query';
+import axios from "axios";
+
 
 function App() {
+
+ 
+
   return (
     <>
+         
       <BrowserRouter>
         <Header />
+    
 
         <Routes>
 
