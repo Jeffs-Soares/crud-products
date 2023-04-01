@@ -2,33 +2,33 @@ import './Form.css';
 import { useEffect, useState } from "react";
 import Input from "../Input/Input";
 import Select from '../Select/Select';
+import TextArea from '../TextArea/TextArea';
 
-const Form = ({labels, button, tagsValues}) => {
-
-  const labelCode = labels[0];
-  const labelName = labels[1];
-  const labelPrice = labels[2];
-  const labelTag = labels[3];
-
-
-  const [codeProduct, setProductCode] = useState(null);
-  const [productName, setProductName] = useState(null);
-  const [productPrice, setProductPrice] = useState(null);
-  const [productTag, setProductTag] = useState(null);
+const Form = ({labels, button, categoryValues}) => {
 
   
+  const labelTitle = labels[0];
+  const labelPrice = labels[1];
+  const labelCategory = labels[2];
+  const labelDescription = labels[3];
 
 
+  const [productTitle, setProductTitle] = useState(null);
+  const [productPrice, setProductPrice] = useState(null);
+  const [productCategory, setProductCategory] = useState(null);
+  const [productDescription, setProductDescription] = useState(null);
+
+  
   const [dataProduct, setDataProduct] = useState([]);
   
 
   function saveData(e){
     e.preventDefault();
     setDataProduct([...dataProduct, {
-      productName: productName,
-      codeProduct: codeProduct,
+      title: productTitle,
       price: productPrice,
-      tag: productTag
+      description: productDescription,
+      category: productCategory
     }])
     
   }
@@ -39,20 +39,22 @@ const Form = ({labels, button, tagsValues}) => {
   }, [dataProduct])
 
 
-  function getCode(inputValue){
-    return setProductCode(inputValue);
-  }
 
   function getProduct(inputValue){
-    return setProductName(inputValue);
+    return setProductTitle(inputValue);
   }
 
   function getPrice(inputValue){
     return setProductPrice(inputValue);
   }
 
-  function getTag(selectValue){
-    return setProductTag(selectValue)
+  function getDescription(selectValue){
+    return setProductDescription(selectValue)
+  }
+
+
+  function getCategory(selectValue){
+    return setProductCategory(selectValue)
   }
  
 
@@ -60,11 +62,15 @@ const Form = ({labels, button, tagsValues}) => {
     <div>
       <form onSubmit={saveData}>
         <h1> Form Product </h1>
-        
-        <Input labelName={labelName}  getInput={getProduct}  placeholder={'Type the product name'}/>
-        <Input labelName={labelCode}  getInput={getCode} placeholder={'Type the code'}  />
+
+        <div className='flex gap-5'>
+        <Input labelName={labelTitle}  getInput={getProduct}  placeholder={'Type the product name'}/>
         <Input labelName={labelPrice}  getInput={getPrice} placeholder={'Type the price'}  />
-        <Select labelName={labelTag}  getInput={getTag} tagsList={tagsValues}/>
+
+        </div>
+        
+        <TextArea labelName={labelDescription} getInput={getDescription} placeholder = {'Type the description'}/>
+        <Select labelName={labelCategory}  getInput={getCategory} categoryList={categoryValues}/>
         
         <button>{button}</button>
       </form>

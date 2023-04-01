@@ -1,0 +1,9 @@
+@tailwind components;
+
+
+@layer components{
+    
+    textarea{
+        @apply shadow appearance-none border rounded-sm w-full py-1 pl-2;
+    }
+}
