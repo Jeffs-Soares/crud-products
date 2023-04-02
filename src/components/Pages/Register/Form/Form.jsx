@@ -4,7 +4,12 @@ import Input from "../Input/Input";
 import Select from '../Select/Select';
 import TextArea from '../TextArea/TextArea';
 
+import axios from 'axios';
+import React from 'react';
+
 const Form = ({labels, button, categoryValues}) => {
+
+
 
   
   const labelTitle = labels[0];
@@ -19,24 +24,18 @@ const Form = ({labels, button, categoryValues}) => {
   const [productDescription, setProductDescription] = useState(null);
 
   
-  const [dataProduct, setDataProduct] = useState([]);
-  
 
   function saveData(e){
     e.preventDefault();
-    setDataProduct([...dataProduct, {
+  
+    axios.post('http://localhost:4000/products', {
       title: productTitle,
       price: productPrice,
       description: productDescription,
       category: productCategory
-    }])
+    })
     
   }
-
-  useEffect(() =>{
-    console.log(dataProduct);
-
-  }, [dataProduct])
 
 
 
