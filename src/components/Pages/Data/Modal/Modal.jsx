@@ -38,6 +38,8 @@ const Modal = ({ product, closeModal }) => {
       category: category
     })
 
+    closeModal()
+
   }
 
 
