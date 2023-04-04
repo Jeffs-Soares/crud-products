@@ -1,0 +1,18 @@
+@tailwind components;
+
+
+
+@layer components{
+
+    .modal{
+        @apply fixed top-0 left-0 right-0 z-50 w-full overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full;
+    }
+
+    label {
+        @apply block text-gray-700 text-sm font-bold;
+    }
+
+    input {
+        @apply shadow appearance-none border rounded-sm w-full py-1 pl-2;
+    }
+}

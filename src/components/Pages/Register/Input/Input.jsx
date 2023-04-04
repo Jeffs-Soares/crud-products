@@ -1,16 +1,17 @@
 import React from 'react';
 import './Input.css';
 
-const Input = ({labelName, placeholder, getInput}) => {
+const Input = ({labelName, placeholder, getInput, title, price}) => {
 
   const getValue = (e) =>{
     getInput(e.target.value);
   }
 
+  
   return (
     <div>
         <label htmlFor="name">{labelName}</label>
-        <input placeholder={`${placeholder}`} onChange={getValue}/>
+        <input value={title} placeholder={`${placeholder}`} onChange={getValue}/>
 
     </div>
   )
