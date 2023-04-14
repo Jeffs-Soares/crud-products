@@ -1,7 +1,9 @@
 import './Home.css';
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
+import { DataApiContext } from '../../../context/DataApi';
 const Home = () => {
+
   return (
     <>
 
