@@ -1,28 +1,23 @@
 import './Data.css';
 
 import { useQuery } from 'react-query';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from "axios";
 import Modal from './Modal/Modal';
 
 const Data = () => {
 
+  const [product, setProduct] = useState({});
+  const [modal, setModal] = useState(false)
+  const [api, setApi] = useState([]);
+  const [id, setID] = useState(null);
+  const [title, setTitle] = useState(null);
 
-  const { data, isLoading, error } = useQuery('products', () => {
-    return axios.get('http://localhost:4000/products')
-      .then(res => res.data);
-
-  }, {
-    retry: 3,
-    refetchOnWindowFocus: true,
-    refetchInterval: 10000, /* Deseja refazer de quanto em quanto tempo a requisição? */
-  })
+  useEffect(() =>{
+    axios.get(`http://localhost:4000/products`).then((res)=> setApi(res.data))
+  }, [])
 
   
-  const [product, setProduct] = useState({});
-
-  const [modal, setModal] = useState(false)
-
   const getDatas = async (id) =>{
 
     let dataEspecific = await axios.get(`http://localhost:4000/products/${id}`).then(res => res.data)
@@ -34,32 +29,12 @@ const Data = () => {
       description: dataEspecific.description,
       category: dataEspecific.category
     })
-
   }
-
-  
-
-  const [id, setID] = useState(null);
-  const [title, setTitle] = useState(null);
-
-  
-  
-  if (isLoading) {
-    return <div>Loading...</div>
-  }
-  
-  if (error) {
-    return <div> Something wrong happened! </div>
-  }
-
 
   const deleteProduct = (id) => {
     axios.delete(`http://localhost:4000/products/${id}`);
     return alert(`Product ${id} deleted!`)
-
   }
-
-
 
   const openModal = () => {
       setModal(true);
@@ -68,15 +43,10 @@ const Data = () => {
   const closeModal = () => {
     setModal(false);
   }
-
-
-
-
-  return (
-
-    <div>
   
-      
+  return (
+    <div>
+        
      {modal ?  <Modal product={product} closeModal={closeModal}/> : ''} 
       <table>
         <thead>
@@ -91,12 +61,11 @@ const Data = () => {
         </thead>
 
         <tbody>
-          {data.map((product) => {
-
-            
+          {api.map((product) => {
+           
             return (
 
-              <tr>
+              <tr key={product.id}>
                 <td> {product.id} </td>
                 <td> {product.title} </td>
               <td> {product.price} </td>
@@ -110,23 +79,13 @@ const Data = () => {
                     setTitle(product.title)
                     getDatas(product.id)
                     openModal()
-
-
-                  }} > Update </button>
-                 
-                  
+                  }} > Update </button>               
                   </td>
               </tr>
-
             )
-
           })}
-
         </tbody>
-      </table>
-
-
-      
+      </table>   
     </div>
   )
 }
