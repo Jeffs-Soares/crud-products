@@ -1,8 +1,8 @@
 import './Data.css';
 
 import { useQuery } from 'react-query';
-import axios from "axios";
 import { useState } from 'react';
+import axios from "axios";
 import Modal from './Modal/Modal';
 
 const Data = () => {
