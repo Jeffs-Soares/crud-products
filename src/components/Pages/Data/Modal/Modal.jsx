@@ -1,15 +1,17 @@
 import './Modal.css';
-import React, { useEffect, useState } from 'react';
-
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-
-
+import { DataApiContext } from '../../../../context/DataApi';
 
 const Modal = ({ product, closeModal }) => {
 
 
   const labels = ['Product Name', 'Price', 'Category', 'Description'];
-  const tags = ['Books', 'Eletronics', 'Other']
+  const tags = ['Books', 'Eletronics', 'Other'];
+
+  const { render, setRender } = useContext(DataApiContext);
+
+
 
 
   useEffect(() => {
@@ -39,9 +41,9 @@ const Modal = ({ product, closeModal }) => {
     })
 
     closeModal()
+    setRender(render + 1)
 
   }
-
 
   return (
     <div className='modal'>

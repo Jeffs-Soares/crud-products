@@ -1,12 +1,14 @@
 import "./Data.css";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import Modal from "./Modal/Modal";
 import { DataApiContext } from "../../../context/DataApi";
 
 const Data = () => {
   const { data } = useContext(DataApiContext);
+   
+
 
   const [product, setProduct] = useState({});
   const [modal, setModal] = useState(false);
