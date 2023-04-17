@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+.main-container{
+    position: relative;
+    min-height: 100vh;
+}
+
 
 @layer components{
 

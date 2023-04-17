@@ -7,8 +7,8 @@ const Register = () => {
   const tags = ['Books', 'Eletronics', 'Other']
 
   return (
-    <div className="pt-12">
-      <div className="flex gap-6 justify-center items-center pt-12">
+    <div>
+      <div className="flex flex-col gap-6 justify-center items-center">
         <Form button={button} labels={labels} categoryValues={tags} />
       </div>
     </div>

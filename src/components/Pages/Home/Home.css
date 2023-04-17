@@ -12,7 +12,7 @@
     }
 
     main p{
-        @apply px-80;
+        @apply px-10;
     }
 
     span{

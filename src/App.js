@@ -6,15 +6,14 @@ import DataApiProvider from "./context/DataApi";
 function App() {
   return (
     <>
-      <Header />
-
+      <div className="main-container">
+        <Header />
         <DataApiProvider>
-        
-        <Outlet />
-
+          <Outlet />
         </DataApiProvider>
 
-      <Footer />
+        <Footer />
+      </div>
     </>
   );
 }
