@@ -5,7 +5,7 @@ export const DataApiContext = createContext();
 
 const DataApiProvider = ({ children }) => {
   const [data, setData] = useState(null);
-  const [render, setRender] = useState(null);
+  const [render, setRender] = useState(false);
 
   useEffect(() => {
     axios

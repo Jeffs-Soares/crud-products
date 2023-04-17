@@ -13,7 +13,6 @@ const Modal = ({ product, closeModal }) => {
 
 
 
-
   useEffect(() => {
     setTitle(product.title);
     setPrice(product.price);
@@ -41,7 +40,7 @@ const Modal = ({ product, closeModal }) => {
     })
 
     closeModal()
-    setRender(render + 1)
+    setRender(!render)
 
   }
 
