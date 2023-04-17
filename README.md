@@ -18,6 +18,7 @@ You may also see any lint errors in the console.
 
 Data structure:
 
+```
 {
   "products": [
     {
@@ -29,7 +30,7 @@ Data structure:
     }
   ]
 }
-
+```
 
 ### `npm run --serverName`
 
