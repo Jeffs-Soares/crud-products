@@ -8,10 +8,11 @@ function App() {
     <>
       <div className="main-container">
         <Header />
-        <DataApiProvider>
-          <Outlet />
-        </DataApiProvider>
-
+          <DataApiProvider>
+        
+            <Outlet />
+          
+          </DataApiProvider>
         <Footer />
       </div>
     </>

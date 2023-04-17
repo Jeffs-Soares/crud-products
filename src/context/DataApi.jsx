@@ -1,3 +1,4 @@
+import { CircularProgress } from "@mui/material";
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
@@ -20,7 +21,8 @@ const DataApiProvider = ({ children }) => {
           {children}
         </DataApiContext.Provider>
       ) : (
-        'Loading...'
+        <div className="flex justify-center pt-20"> <CircularProgress />  </div>
+        
       )}
     </>
   );
